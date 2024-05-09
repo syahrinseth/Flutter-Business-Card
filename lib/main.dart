@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
         darkTheme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Color(0xFF042B59)),
-          colorScheme: ColorScheme.fromSeed(
+            fontFamily: 'Roboto',
+            colorScheme: ColorScheme.fromSeed(
             primary: Colors.white,
             seedColor: Colors.white,
             brightness: Brightness.dark,
