@@ -1,5 +1,4 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,13 +12,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          useMaterial3: true,
           fontFamily: 'Roboto',
-          appBarTheme: const AppBarTheme(backgroundColor: Color(0xFF042B59)),
           colorScheme: ColorScheme.fromSeed(
+            primary: const Color(0xFF042B59),
             seedColor: const Color(0xFF042B59),
+            brightness: Brightness.light,
+          ),
+        ),
+        darkTheme: ThemeData(appBarTheme: const AppBarTheme(backgroundColor: Color(0xFF042B59)),
+          colorScheme: ColorScheme.fromSeed(
+            primary: Colors.white,
+            seedColor: Colors.white,
             brightness: Brightness.dark,
-          ).copyWith(background: const Color(0xFF042B59)),
+            background: const Color(0xFF042B59),
+          )
         ),
         home: const MyHomeScreen(),
     );
@@ -40,29 +46,29 @@ class MyHomeScreen extends StatelessWidget {
               radius: 60,
               backgroundImage: AssetImage('images/my_image.jpg'),
             ),
-            const Text(
+            Text(
               'Syahrin Seth',
               style: TextStyle(
                   fontSize: 40.0,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold),
             ),
-            const Text(
+            Text(
               'FLUTTER DEVELOPER',
               style: TextStyle(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 20.0,
                 letterSpacing: 2.5,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20.0,
               width: 150.0,
               child: Divider(
                 height: 1,
                 thickness: 1,
-                color: Color(0xFF042B59),
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             const Card(
